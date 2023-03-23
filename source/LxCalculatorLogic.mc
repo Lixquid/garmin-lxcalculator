@@ -39,7 +39,7 @@ class LxCalculatorLogic {
     }
 
     function loadState() {
-        if (Storage.getValue(STORAGE_STATE_VERSION) != APP_VERSION) {
+        if (!Storage.getValue(STORAGE_STATE_VERSION).equals(APP_VERSION)) {
             Storage.deleteValue(STORAGE_STATE_VERSION);
             Storage.deleteValue(STORAGE_STATE_LEFT);
             Storage.deleteValue(STORAGE_STATE_OPERATOR);
