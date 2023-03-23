@@ -6,10 +6,13 @@ class LxCalculatorApp extends AppBase {
 
     function initialize() {
         AppBase.initialize();
+        initializeConstants();
     }
 
     function getInitialView() as Array<Views or InputDelegates>? {
-        var view = new LxCalculatorNumbersView(new LxCalculatorLogic());
+        var logic = new LxCalculatorLogic();
+        logic.loadState();
+        var view = new LxCalculatorNumbersView(logic);
         return [view, new LxCalculatorInputBehaviorDelegate(view)];
     }
 

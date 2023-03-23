@@ -1,3 +1,5 @@
+import Toybox.Application.Properties;
+import Toybox.Application.Storage;
 import Toybox.Lang;
 import Toybox.Math;
 import Toybox.StringUtil;
@@ -28,6 +30,32 @@ class LxCalculatorLogic {
     var _right as Array<Char> = [] as Array<Char>;
     var _errored as Boolean = false;
 
+    function saveState() {
+        Storage.setValue(STORAGE_STATE_VERSION, APP_VERSION);
+        Storage.setValue(STORAGE_STATE_LEFT, _left);
+        Storage.setValue(STORAGE_STATE_OPERATOR, _operator);
+        Storage.setValue(STORAGE_STATE_RIGHT, _right);
+        Storage.setValue(STORAGE_STATE_ERRORED, _errored);
+    }
+
+    function loadState() {
+        if (Storage.getValue(STORAGE_STATE_VERSION) != APP_VERSION) {
+            Storage.deleteValue(STORAGE_STATE_VERSION);
+            Storage.deleteValue(STORAGE_STATE_LEFT);
+            Storage.deleteValue(STORAGE_STATE_OPERATOR);
+            Storage.deleteValue(STORAGE_STATE_RIGHT);
+            Storage.deleteValue(STORAGE_STATE_ERRORED);
+        }
+        var left = Storage.getValue(STORAGE_STATE_LEFT);
+        if (left != null) { _left = left; }
+        var operator = Storage.getValue(STORAGE_STATE_OPERATOR);
+        if (operator != null) { _operator = operator as LX_OPERATOR; }
+        var right = Storage.getValue(STORAGE_STATE_RIGHT);
+        if (right != null) { _right = right; }
+        var errored = Storage.getValue(STORAGE_STATE_ERRORED);
+        if (errored != null) { _errored = errored; }
+    }
+
     function addChar(char as Char) {
         if (_errored) { return; }
 
@@ -44,18 +72,19 @@ class LxCalculatorLogic {
                     target.add('0');
                 }
                 target.add('.');
-                return;
+                break;
             case '0':
                 if (target.size() == 0) {
                     // Don't add leading zeroes
                     return;
                 }
                 target.add('0');
-                return;
+                break;
             default:
                 target.add(char);
-                return;
+                break;
         }
+        saveState();
     }
 
     function delete() {
@@ -76,6 +105,7 @@ class LxCalculatorLogic {
                 _left = _left.slice(0, -1);
             }
         }
+        saveState();
     }
 
     function clearAll() {
@@ -83,6 +113,7 @@ class LxCalculatorLogic {
         _right = [];
         _operator = LX_OPERATOR_NONE;
         _errored = false;
+        saveState();
     }
 
     function setOperator(op as LX_OPERATOR) {
@@ -94,6 +125,7 @@ class LxCalculatorLogic {
             calculate();
         }
         _operator = op;
+        saveState();
     }
 
     function calculate() {
@@ -150,10 +182,12 @@ class LxCalculatorLogic {
         _left = resultStr;
         _operator = LX_OPERATOR_NONE;
         _right = [] as Array<Char>;
+        saveState();
     }
 
     function setErrored() {
         _errored = true;
+        saveState();
     }
 
     function stripTrailingZeroes(ar as Array<Char>) as Array<Char> {
