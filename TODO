@@ -1,0 +1,17 @@
+# TODO
+
+- Vibrations on button press (setting)
+- Customize settings via menu
+- Make state persist on shutdowns (logic)
+- Add trig functions
+- Memory (memory cells?)
+- History
+- Automatically swap back to numbers after op (setting)
+- A compressed view with common ops (4x5 view)
+    - ```
+      + 7 8 9
+      - 4 5 6
+      * 1 2 3
+      / . 0 D
+      ^ =   C
+      ```
