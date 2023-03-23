@@ -81,4 +81,9 @@ class LxCalculatorInputBehaviorDelegate extends BehaviorDelegate {
         return false;
     }
 
+    function onMenu() as Boolean {
+        createLxCalculatorMainMenu();
+        return true;
+    }
+
 }
