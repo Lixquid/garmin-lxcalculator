@@ -2,6 +2,9 @@
     <string id="AppName">Calculator</string>
     <string id="AppVersion">0.1.0</string>
 
+    <string id="MainMenuTitle">Main Menu</string>
+    <string id="MainMenuSettings">Settings</string>
+
     <string id="SwitchAfterOperator">SwitchAfterOperator</string>
     <string id="SwitchAfterOperatorTitle">Switch after setting Operator</string>
     <string id="SwitchAfterOperatorPrompt">If set, switches to number input after an operator is chosen.</string>

@@ -8,11 +8,22 @@ class LxCalculatorMainMenuDelegate extends Menu2InputDelegate {
         WatchUi.popView(WatchUi.SLIDE_LEFT);
     }
     function onSelect(item as MenuItem) {
+        switch (item.getId()) {
+            case "settings":
+                createLxCalculatorSettingsMenu();
+                break;
+        }
     }
 }
 
 function createLxCalculatorMainMenu() {
-    var menu = new Menu2({:title => "Main Menu"});
+    var menu = new Menu2({:title => STR_MAINMENUTITLE});
+    menu.addItem(new MenuItem(
+        STR_MAINMENUSETTINGS,
+        null,
+        "settings",
+        {}
+    ));
     menu.addItem(new MenuItem(
         "Lx Calculator",
         APP_VERSION,
