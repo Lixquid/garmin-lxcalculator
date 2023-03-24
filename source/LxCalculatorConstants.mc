@@ -9,6 +9,9 @@ const STORAGE_STATE_OPERATOR = "saveState.operator";
 const STORAGE_STATE_RIGHT = "saveState.right";
 const STORAGE_STATE_ERRORED = "saveState.errored";
 
+(:initialized) var SETTING_SWITCHAFTEROPERATOR as String;
+
 function initializeConstants() {
     APP_VERSION = WatchUi.loadResource(Rez.Strings.AppVersion);
+    SETTING_SWITCHAFTEROPERATOR = WatchUi.loadResource(Rez.Strings.SwitchAfterOperator);
 }

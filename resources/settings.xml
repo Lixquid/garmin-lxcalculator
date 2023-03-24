@@ -1,0 +1,5 @@
+<settings>
+    <setting propertyKey="@Properties.SwitchAfterOperator" title="@Strings.SwitchAfterOperatorTitle" prompt="@Strings.SwitchAfterOperatorPrompt">
+        <settingConfig type="boolean" />
+    </setting>
+</settings>

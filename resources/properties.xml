@@ -1,0 +1,3 @@
+<properties>
+    <property id="SwitchAfterOperator" type="boolean">false</property>
+</properties>
