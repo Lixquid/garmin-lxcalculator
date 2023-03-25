@@ -11,7 +11,8 @@ enum LX_OPERATOR {
     LX_OPERATOR_SUBTRACT,
     LX_OPERATOR_MULTIPLY,
     LX_OPERATOR_DIVIDE,
-    LX_OPERATOR_POWER
+    LX_OPERATOR_POWER,
+    LX_OPERATOR_LOG
 }
 
 var LxCalculatorOperatorDisplay = {
@@ -20,10 +21,13 @@ var LxCalculatorOperatorDisplay = {
     LX_OPERATOR_SUBTRACT => "$1$ - $2$",
     LX_OPERATOR_MULTIPLY => "$1$ × $2$",
     LX_OPERATOR_DIVIDE => "$1$ ÷ $2$",
-    LX_OPERATOR_POWER => "$1$ ^ $2$"
+    LX_OPERATOR_POWER => "$1$ ^ $2$",
+    LX_OPERATOR_LOG => "log($1$, $2$)"
 } as Dictionary<LX_OPERATOR, String>;
 
 class LxCalculatorLogic {
+
+    var _nan = Math.pow(-1, 0.5);
 
     var _left as Array<Char> = [] as Array<Char>;
     var _operator as LX_OPERATOR = LX_OPERATOR_NONE;
@@ -164,6 +168,9 @@ class LxCalculatorLogic {
             case LX_OPERATOR_POWER:
                 result = Math.pow(left, right);
                 break;
+            case LX_OPERATOR_LOG:
+                result = Math.log(left, right);
+                break;
         }
         if (result != result) {
             // NaN
@@ -188,6 +195,35 @@ class LxCalculatorLogic {
     function setErrored() {
         _errored = true;
         saveState();
+    }
+
+    function getAsDouble() as Double {
+        calculate();
+        if (_errored) {
+            return _nan;
+        }
+        var out = StringUtil.charArrayToString(_left).toDouble();
+        return out == null ? 0d : out;
+    }
+
+    function setValue(value as Double) {
+        if (value != value) {
+            // NaN
+            setErrored();
+            return;
+        }
+        var arr = value.toString().toCharArray();
+        if (arr.indexOf('.') != -1) {
+            arr = stripTrailingZeroes(arr);
+        }
+        if (arr.size() == 1 && arr[0] == '0') {
+            arr = [];
+        }
+        if (_operator == LX_OPERATOR_NONE) {
+            _left = arr;
+        } else {
+            _right = arr;
+        }
     }
 
     function stripTrailingZeroes(ar as Array<Char>) as Array<Char> {

@@ -1,0 +1,31 @@
+<layout id="Trigonometry">
+    <drawable class="LxCalculatorGridDrawable" />
+    <text-area id="Display"
+        x="20%" y="10%" width="60%" height="15%"
+        color="Graphics.COLOR_WHITE"
+        justification="Graphics.TEXT_JUSTIFY_RIGHT|Graphics.TEXT_JUSTIFY_VCENTER"
+        text="0"
+    >
+        <fonts>
+            <font>Graphics.FONT_SMALL</font>
+            <font>Graphics.FONT_TINY</font>
+            <font>Graphics.FONT_XTINY</font>
+        </fonts>
+    </text-area>
+
+    <!-- <label text="&lt;" x="5%" y="50%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" /> -->
+    <label text="&gt;" x="95%" y="50%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+
+    <label text="π" x="23.333%" y="33.125%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="e" x="50%" y="33.125%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="sqrt" x="76.666%" y="33.125%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="sin" x="23.333%" y="49.375%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="cos" x="50%" y="49.375%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="tan" x="76.666%" y="49.375%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="asin" x="23.333%" y="65.625%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="acos" x="50%" y="65.625%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="atan" x="76.666%" y="65.625%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="ln" x="23.333%" y="81.875%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="log" x="50%" y="81.875%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <label text="DEL" x="76.666%" y="81.875%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+</layout>

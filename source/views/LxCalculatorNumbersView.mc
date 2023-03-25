@@ -40,6 +40,11 @@ class LxCalculatorNumbersView extends LxCalculatorAbstractView {
 
     function onPage(direction as LX_DIRECTION) {
         switch (direction) {
+            case LX_DIRECTION_LEFT: {
+                var view = new LxCalculatorTrigonometryView(_logic);
+                WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_RIGHT);
+                return;
+            }
             case LX_DIRECTION_RIGHT: {
                 var view = new LxCalculatorOperatorsView(_logic);
                 WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_LEFT);

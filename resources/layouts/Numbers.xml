@@ -13,7 +13,7 @@
         </fonts>
     </text-area>
 
-    <!-- <label text="&lt;" x="5%" y="50%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" /> -->
+    <label text="&lt;" x="5%" y="50%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
     <label text="&gt;" x="95%" y="50%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
 
     <label text="7" x="23.333%" y="33.125%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
