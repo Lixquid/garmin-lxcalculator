@@ -17,22 +17,22 @@ class LxCalculatorTrigonometryView extends LxCalculatorAbstractView {
     function onButton(x as Number, y as Number) {
         switch (y) {
             case 0: switch (x) {
-                case 0: _logic.setValue(_pi); sw(); break;
-                case 1: _logic.setValue(_e); sw(); break;
-                case 2: _logic.setValue(Math.pow(_logic.getAsDouble(), 0.5)); sw(); break;
+                case 0: _logic.setValue(_pi, {}); sw(); break;
+                case 1: _logic.setValue(_e, {}); sw(); break;
+                case 2: _logic.setValue(Math.pow(_logic.getAsDouble(), 0.5), {:addToHistory => true}); sw(); break;
             } break;
             case 1: switch (x) {
-                case 0: _logic.setValue(Math.sin(_logic.getAsDouble())); sw(); break;
-                case 1: _logic.setValue(Math.cos(_logic.getAsDouble())); sw(); break;
-                case 2: _logic.setValue(Math.tan(_logic.getAsDouble())); sw(); break;
+                case 0: _logic.setValue(Math.sin(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
+                case 1: _logic.setValue(Math.cos(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
+                case 2: _logic.setValue(Math.tan(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
             } break;
             case 2: switch (x) {
-                case 0: _logic.setValue(Math.asin(_logic.getAsDouble())); sw(); break;
-                case 1: _logic.setValue(Math.acos(_logic.getAsDouble())); sw(); break;
-                case 2: _logic.setValue(Math.atan(_logic.getAsDouble())); sw(); break;
+                case 0: _logic.setValue(Math.asin(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
+                case 1: _logic.setValue(Math.acos(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
+                case 2: _logic.setValue(Math.atan(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
             } break;
             case 3: switch (x) {
-                case 0: _logic.setValue(Math.ln(_logic.getAsDouble())); sw(); break;
+                case 0: _logic.setValue(Math.ln(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
                 case 1: _logic.setOperator(LX_OPERATOR_LOG); sw(); break;
                 case 2: _logic.delete(); break;
             } break;

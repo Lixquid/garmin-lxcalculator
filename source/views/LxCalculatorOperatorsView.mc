@@ -21,7 +21,7 @@ class LxCalculatorOperatorsView extends LxCalculatorAbstractView {
             case 1: switch (x) {
                 case 0: _logic.setOperator(LX_OPERATOR_DIVIDE); sw(); break;
                 case 1: _logic.setOperator(LX_OPERATOR_POWER); sw(); break;
-                case 2: _logic.calculate(); break;
+                case 2: _logic.calculate({ :addToHistory => true }); break;
             } break;
             case 2: switch (x) {
                 case 0: break;

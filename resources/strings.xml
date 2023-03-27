@@ -5,6 +5,9 @@
     <string id="MainMenuTitle">Main Menu</string>
     <string id="MainMenuSettings">Settings</string>
 
+    <string id="HistoryMenuTitle">History</string>
+    <string id="HistoryMenuNoEntries">No History Entries</string>
+
     <string id="SwitchAfterOperator">SwitchAfterOperator</string>
     <string id="SwitchAfterOperatorTitle">Switch after setting Operator</string>
     <string id="SwitchAfterOperatorPrompt">If set, switches to number input after an operator is chosen.</string>

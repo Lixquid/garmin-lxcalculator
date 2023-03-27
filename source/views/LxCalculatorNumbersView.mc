@@ -50,6 +50,9 @@ class LxCalculatorNumbersView extends LxCalculatorAbstractView {
                 WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_LEFT);
                 return;
             }
+            case LX_DIRECTION_UP:
+                createLxCalculatorHistoryMenu(_logic);
+                return;
         }
     }
 }

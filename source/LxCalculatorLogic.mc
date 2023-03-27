@@ -34,21 +34,26 @@ class LxCalculatorLogic {
     var _right as Array<Char> = [] as Array<Char>;
     var _errored as Boolean = false;
 
+    var history as Array<Double> = [] as Array<Double>;
+
     function saveState() {
         Storage.setValue(STORAGE_STATE_VERSION, APP_VERSION);
         Storage.setValue(STORAGE_STATE_LEFT, _left);
         Storage.setValue(STORAGE_STATE_OPERATOR, _operator);
         Storage.setValue(STORAGE_STATE_RIGHT, _right);
         Storage.setValue(STORAGE_STATE_ERRORED, _errored);
+        Storage.setValue(STORAGE_HISTORY, history);
     }
 
     function loadState() {
-        if (!Storage.getValue(STORAGE_STATE_VERSION).equals(APP_VERSION)) {
+        var version = Storage.getValue(STORAGE_STATE_VERSION);
+        if (version != null && !version.equals(APP_VERSION)) {
             Storage.deleteValue(STORAGE_STATE_VERSION);
             Storage.deleteValue(STORAGE_STATE_LEFT);
             Storage.deleteValue(STORAGE_STATE_OPERATOR);
             Storage.deleteValue(STORAGE_STATE_RIGHT);
             Storage.deleteValue(STORAGE_STATE_ERRORED);
+            Storage.deleteValue(STORAGE_HISTORY);
         }
         var left = Storage.getValue(STORAGE_STATE_LEFT);
         if (left != null) { _left = left; }
@@ -58,6 +63,8 @@ class LxCalculatorLogic {
         if (right != null) { _right = right; }
         var errored = Storage.getValue(STORAGE_STATE_ERRORED);
         if (errored != null) { _errored = errored; }
+        var historyS = Storage.getValue(STORAGE_HISTORY);
+        if (historyS != null) { history = historyS; }
     }
 
     function addChar(char as Char) {
@@ -126,13 +133,15 @@ class LxCalculatorLogic {
         if (_right.size() != 0) {
             // If we have an existing operation, calculate it before doing another
             // A + B - => AB -
-            calculate();
+            calculate({});
         }
         _operator = op;
         saveState();
     }
 
-    function calculate() {
+    function calculate(options as {
+        :addToHistory as Boolean or Null
+    }) {
         if (_errored) { return; }
 
         if (_operator == LX_OPERATOR_NONE) {
@@ -189,6 +198,9 @@ class LxCalculatorLogic {
         _left = resultStr;
         _operator = LX_OPERATOR_NONE;
         _right = [] as Array<Char>;
+        if (options[:addToHistory]) {
+            pushHistory();
+        }
         saveState();
     }
 
@@ -198,7 +210,7 @@ class LxCalculatorLogic {
     }
 
     function getAsDouble() as Double {
-        calculate();
+        calculate({});
         if (_errored) {
             return _nan;
         }
@@ -206,7 +218,9 @@ class LxCalculatorLogic {
         return out == null ? 0d : out;
     }
 
-    function setValue(value as Double) {
+    function setValue(value as Double, options as {
+        :addToHistory as Boolean or Null
+    }) {
         if (value != value) {
             // NaN
             setErrored();
@@ -221,9 +235,28 @@ class LxCalculatorLogic {
         }
         if (_operator == LX_OPERATOR_NONE) {
             _left = arr;
+            if (options[:addToHistory]) {
+                pushHistory();
+            }
         } else {
             _right = arr;
         }
+        saveState();
+    }
+
+    function pushHistory() {
+        if (_errored) {
+            return;
+        }
+        var value = StringUtil.charArrayToString(_left).toDouble();
+        if (value == null) {
+            value = 0d;
+        }
+        if (value != value) {
+            return;
+        }
+        history.add(value);
+        history = history.slice(-30, null);
     }
 
     function stripTrailingZeroes(ar as Array<Char>) as Array<Char> {
