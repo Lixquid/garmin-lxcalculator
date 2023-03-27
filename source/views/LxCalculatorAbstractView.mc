@@ -1,6 +1,11 @@
+import Toybox.Attention;
 import Toybox.Graphics;
 import Toybox.WatchUi;
 import Toybox.Lang;
+
+var lxVibeProfile = [
+    new Attention.VibeProfile(25, 50)
+];
 
 class LxCalculatorAbstractView extends View {
     protected var _display as TextArea?;
@@ -35,5 +40,11 @@ class LxCalculatorAbstractView extends View {
     function onConfirm() {
         _logic.calculate({ :addToHistory => true });
         requestUpdate();
+    }
+
+    function vibrateIfEnabled() {
+        if (Application.Properties.getValue(SETTING_VIBRATEONBUTTON)) {
+            Attention.vibrate(lxVibeProfile);
+        }
     }
 }

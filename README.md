@@ -38,3 +38,5 @@ long-pressing the MENU button and going to the "Settings" menu.
 - Switch after setting Operator
     - If set, the view will reset to the main number pad once an operator has
       been chosen.
+- Vibration
+    - If set, button presses will cause a small vibration.

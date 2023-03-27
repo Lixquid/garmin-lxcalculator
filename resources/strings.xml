@@ -11,4 +11,7 @@
     <string id="SwitchAfterOperator">SwitchAfterOperator</string>
     <string id="SwitchAfterOperatorTitle">Switch after setting Operator</string>
     <string id="SwitchAfterOperatorPrompt">If set, switches to number input after an operator is chosen.</string>
+    <string id="VibrateOnButton">VibrateOnButton</string>
+    <string id="VibrateOnButtonTitle">Vibration</string>
+    <string id="VibrateOnButtonPrompt">Enables button vibration feedback</string>
 </strings>

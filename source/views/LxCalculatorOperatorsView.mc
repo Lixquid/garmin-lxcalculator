@@ -24,16 +24,17 @@ class LxCalculatorOperatorsView extends LxCalculatorAbstractView {
                 case 2: _logic.calculate({ :addToHistory => true }); break;
             } break;
             case 2: switch (x) {
-                case 0: break;
-                case 1: break;
-                case 2: break;
+                case 0: return;
+                case 1: return;
+                case 2: return;
             } break;
             case 3: switch (x) {
                 case 0: _logic.clearAll(); sw(); break;
-                case 1: break;
+                case 1: return;
                 case 2: _logic.delete(); break;
             } break;
         }
+        vibrateIfEnabled();
         requestUpdate();
     }
 

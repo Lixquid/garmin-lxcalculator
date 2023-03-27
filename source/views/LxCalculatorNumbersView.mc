@@ -35,6 +35,7 @@ class LxCalculatorNumbersView extends LxCalculatorAbstractView {
                 case 2: _logic.delete(); break;
             } break;
         }
+        vibrateIfEnabled();
         requestUpdate();
     }
 

@@ -1,3 +1,4 @@
 <properties>
     <property id="SwitchAfterOperator" type="boolean">false</property>
+    <property id="VibrateOnButton" type="boolean">true</property>
 </properties>
