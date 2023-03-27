@@ -1,11 +1,9 @@
 # TODO
 
 - Vibrations on button press (setting)
-- Customize settings via menu
-- Add trig functions
+- Add tests for trig
 - Memory (memory cells?)
 - History
-- Automatically swap back to numbers after op (setting)
 - A compressed view with common ops (4x5 view)
     - ```
       + 7 8 9
