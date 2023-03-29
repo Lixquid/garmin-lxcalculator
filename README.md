@@ -40,3 +40,16 @@ long-pressing the MENU button and going to the "Settings" menu.
       been chosen.
 - Vibration
     - If set, button presses will cause a small vibration.
+
+# Developer Documentation
+
+## Preparing a release
+
+To perform a release:
+
+- Create an entry in [CHANGELOG.md](CHANGELOG.md) under the next version
+- Commit with `Version x.x.x`
+- Tag that commit as `vx.x.x`
+- Update the version number for `AppVersion` in
+  [resources/strings.xml](resources/strings.xml).
+- Commit
