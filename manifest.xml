@@ -2,9 +2,17 @@
 <iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
     <iq:application id="0d7c3427-b0b0-499e-881f-c41ea7c4a59b" type="watch-app" name="@Strings.AppName" entry="LxCalculatorApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="4.0.0">
         <iq:products>
+            <iq:product id="epix2"/>
             <iq:product id="fenix7"/>
             <iq:product id="fenix7s"/>
             <iq:product id="fenix7x"/>
+            <iq:product id="marq2"/>
+            <iq:product id="marq2aviator"/>
+            <iq:product id="venu2"/>
+            <iq:product id="venu2plus"/>
+            <iq:product id="venu2s"/>
+            <iq:product id="venusq2"/>
+            <iq:product id="venusq2m"/>
         </iq:products>
         <iq:permissions/>
         <iq:languages>
