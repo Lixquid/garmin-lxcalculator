@@ -48,8 +48,7 @@ long-pressing the MENU button and going to the "Settings" menu.
 To perform a release:
 
 - Create an entry in [CHANGELOG.md](CHANGELOG.md) under the next version
-- Commit with `Version x.x.x`
-- Tag that commit as `vx.x.x`
 - Update the version number for `AppVersion` in
   [resources/strings.xml](resources/strings.xml).
-- Commit
+- Commit with `Version x.x.x`
+- Tag that commit as `vx.x.x`
