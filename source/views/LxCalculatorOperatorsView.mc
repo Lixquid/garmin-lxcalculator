@@ -42,7 +42,7 @@ class LxCalculatorOperatorsView extends LxCalculatorAbstractView {
         switch (direction) {
             case LX_DIRECTION_LEFT: {
                 var view = new LxCalculatorNumbersView(_logic);
-                WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_RIGHT);
+                WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), slideIfEnabled(SLIDE_RIGHT));
                 return;
             }
         }
@@ -51,8 +51,7 @@ class LxCalculatorOperatorsView extends LxCalculatorAbstractView {
     function sw() {
         // Switch if setting is set
         if (Application.Properties.getValue(SETTING_SWITCHAFTEROPERATOR)) {
-            var view = new LxCalculatorNumbersView(_logic);
-            WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_RIGHT);
+            onPage(LX_DIRECTION_LEFT);
         }
     }
 }

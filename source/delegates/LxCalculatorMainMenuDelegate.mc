@@ -5,7 +5,7 @@ class LxCalculatorMainMenuDelegate extends Menu2InputDelegate {
         Menu2InputDelegate.initialize();
     }
     function onBack() {
-        WatchUi.popView(WatchUi.SLIDE_LEFT);
+        WatchUi.popView(slideIfEnabled(WatchUi.SLIDE_LEFT));
     }
     function onSelect(item as MenuItem) {
         switch (item.getId()) {
@@ -30,5 +30,5 @@ function createLxCalculatorMainMenu() {
         "",
         {}
     ));
-    WatchUi.pushView(menu, new LxCalculatorMainMenuDelegate(), WatchUi.SLIDE_RIGHT);
+    WatchUi.pushView(menu, new LxCalculatorMainMenuDelegate(), slideIfEnabled(WatchUi.SLIDE_RIGHT));
 }

@@ -15,7 +15,7 @@ class LxCalculatorHistoryMenuDelegate extends Menu2InputDelegate {
     }
 
     function onBack() {
-        WatchUi.popView(SLIDE_UP);
+        WatchUi.popView(slideIfEnabled(SLIDE_UP));
     }
 }
 
@@ -39,5 +39,5 @@ function createLxCalculatorHistoryMenu(logic as LxCalculatorLogic) {
         }
         menu.setFocus(logic.history.size() - 1);
     }
-    WatchUi.pushView(menu, new LxCalculatorHistoryMenuDelegate(logic), WatchUi.SLIDE_DOWN);
+    WatchUi.pushView(menu, new LxCalculatorHistoryMenuDelegate(logic), slideIfEnabled(WatchUi.SLIDE_DOWN));
 }

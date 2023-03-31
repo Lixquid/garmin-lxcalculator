@@ -21,6 +21,9 @@ const STORAGE_HISTORY = "history";
 (:initialized) var SETTING_VIBRATEONBUTTON as String;
 (:initialized) var SETTING_VIBRATEONBUTTON_TITLE as String;
 (:initialized) var SETTING_VIBRATEONBUTTON_PROMPT as String;
+(:initialized) var SETTING_SCREENTRANSITIONS as String;
+(:initialized) var SETTING_SCREENTRANSITIONS_TITLE as String;
+(:initialized) var SETTING_SCREENTRANSITIONS_PROMPT as String;
 
 function initializeConstants() {
     APP_VERSION = WatchUi.loadResource(Rez.Strings.AppVersion);
@@ -36,4 +39,7 @@ function initializeConstants() {
     SETTING_VIBRATEONBUTTON = WatchUi.loadResource(Rez.Strings.VibrateOnButton);
     SETTING_VIBRATEONBUTTON_TITLE = WatchUi.loadResource(Rez.Strings.VibrateOnButtonTitle);
     SETTING_VIBRATEONBUTTON_PROMPT = WatchUi.loadResource(Rez.Strings.VibrateOnButtonPrompt);
+    SETTING_SCREENTRANSITIONS = WatchUi.loadResource(Rez.Strings.ScreenTransitions);
+    SETTING_SCREENTRANSITIONS_TITLE = WatchUi.loadResource(Rez.Strings.ScreenTransitionsTitle);
+    SETTING_SCREENTRANSITIONS_PROMPT = WatchUi.loadResource(Rez.Strings.ScreenTransitionsPrompt);
 }

@@ -17,7 +17,6 @@
 - Factorial function `!`
 - Invert number `+/-`
 - Radians / Degrees / Gradians
-- Setting for screen transitions
 - Convert between units
 - Actual full parsing with precedence
 - RPN mode (replace history with stack)

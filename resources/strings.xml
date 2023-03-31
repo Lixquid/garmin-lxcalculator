@@ -14,4 +14,7 @@
     <string id="VibrateOnButton">VibrateOnButton</string>
     <string id="VibrateOnButtonTitle">Vibration</string>
     <string id="VibrateOnButtonPrompt">Enables button vibration feedback</string>
+    <string id="ScreenTransitions">ScreenTransitions</string>
+    <string id="ScreenTransitionsTitle">Screen Transitions</string>
+    <string id="ScreenTransitionsPrompt">Enables the sliding transition animation when switching screens</string>
 </strings>
