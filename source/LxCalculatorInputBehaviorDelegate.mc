@@ -54,6 +54,10 @@ class LxCalculatorInputBehaviorDelegate extends BehaviorDelegate {
             _view.onPage(LX_DIRECTION_UP);
             return true;
         }
+        if (y < 0.25) {
+            _view.onConfirm();
+            return true;
+        }
         if (y > 0.9) {
             _view.onPage(LX_DIRECTION_DOWN);
             return true;

@@ -39,6 +39,7 @@ class LxCalculatorAbstractView extends View {
     function onPage(direction as LX_DIRECTION) {}
     function onConfirm() {
         _logic.calculate({ :addToHistory => true });
+        vibrateIfEnabled();
         requestUpdate();
     }
 
