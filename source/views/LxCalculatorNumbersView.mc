@@ -54,6 +54,12 @@ class LxCalculatorNumbersView extends LxCalculatorAbstractView {
             case LX_DIRECTION_UP:
                 createLxCalculatorHistoryMenu(_logic);
                 return;
+            case LX_DIRECTION_DOWN: {
+                var view = new LxCalculatorExtraView(_logic);
+                WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_UP);
+                return;
+            }
+
         }
     }
 }

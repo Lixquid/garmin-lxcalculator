@@ -1,36 +1,36 @@
 import Toybox.Graphics;
 import Toybox.Lang;
 
-class LxCalculatorOperatorsView extends LxCalculatorAbstractView {
+class LxCalculatorExtraView extends LxCalculatorAbstractView {
     function initialize(logic as LxCalculatorLogic) {
         LxCalculatorAbstractView.initialize(logic);
     }
 
     function onLayout(dc as Dc) {
-        setLayout(Rez.Layouts.Operators(dc));
+        setLayout(Rez.Layouts.Extra(dc));
         LxCalculatorAbstractView.onLayout(dc);
     }
 
     function onButton(x as Number, y as Number) {
         switch (y) {
             case 0: switch (x) {
-                case 0: _logic.setOperator(LX_OPERATOR_ADD); sw(); break;
-                case 1: _logic.setOperator(LX_OPERATOR_SUBTRACT); sw(); break;
-                case 2: _logic.setOperator(LX_OPERATOR_MULTIPLY); sw(); break;
+                case 0: return;
+                case 1: return;
+                case 2: return;
             } break;
             case 1: switch (x) {
-                case 0: _logic.setOperator(LX_OPERATOR_DIVIDE); sw(); break;
-                case 1: _logic.setOperator(LX_OPERATOR_POWER); sw(); break;
+                case 0: return;
+                case 1: _logic.setOperator(LX_OPERATOR_LOG); sw(); break;
                 case 2: return;
             } break;
             case 2: switch (x) {
-                case 0: _logic.setValue(Math.pow(_logic.getAsDouble(), 0.5), {:addToHistory => true}); sw(); break;
-                case 1: _logic.setValue(Math.pow(_logic.getAsDouble(), 2), {:addToHistory => true}); sw(); break;
+                case 0: return;
+                case 1: return;
                 case 2: return;
             } break;
             case 3: switch (x) {
-                case 0: _logic.clearAll(); sw(); break;
-                case 1: _logic.calculate({ :addToHistory => true }); break;
+                case 0: return;
+                case 1: return;
                 case 2: _logic.delete(); break;
             } break;
         }
@@ -40,9 +40,9 @@ class LxCalculatorOperatorsView extends LxCalculatorAbstractView {
 
     function onPage(direction as LX_DIRECTION) {
         switch (direction) {
-            case LX_DIRECTION_LEFT: {
+            case LX_DIRECTION_UP: {
                 var view = new LxCalculatorNumbersView(_logic);
-                WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_RIGHT);
+                WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_DOWN);
                 return;
             }
         }
@@ -52,7 +52,7 @@ class LxCalculatorOperatorsView extends LxCalculatorAbstractView {
         // Switch if setting is set
         if (Application.Properties.getValue(SETTING_SWITCHAFTEROPERATOR)) {
             var view = new LxCalculatorNumbersView(_logic);
-            WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_RIGHT);
+            WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), SLIDE_DOWN);
         }
     }
 }

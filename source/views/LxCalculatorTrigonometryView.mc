@@ -18,8 +18,8 @@ class LxCalculatorTrigonometryView extends LxCalculatorAbstractView {
         switch (y) {
             case 0: switch (x) {
                 case 0: _logic.setValue(_pi, {}); sw(); break;
-                case 1: _logic.setValue(_e, {}); sw(); break;
-                case 2: _logic.setValue(Math.pow(_logic.getAsDouble(), 0.5), {:addToHistory => true}); sw(); break;
+                case 1: return;
+                case 2: return;
             } break;
             case 1: switch (x) {
                 case 0: _logic.setValue(Math.sin(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
@@ -32,8 +32,8 @@ class LxCalculatorTrigonometryView extends LxCalculatorAbstractView {
                 case 2: _logic.setValue(Math.atan(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
             } break;
             case 3: switch (x) {
-                case 0: _logic.setValue(Math.ln(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
-                case 1: _logic.setOperator(LX_OPERATOR_LOG); sw(); break;
+                case 0: _logic.setValue(_e, {}); sw(); break;
+                case 1: _logic.setValue(Math.ln(_logic.getAsDouble()), {:addToHistory => true}); sw(); break;
                 case 2: _logic.delete(); break;
             } break;
         }
