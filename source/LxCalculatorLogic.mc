@@ -42,6 +42,7 @@ class LxCalculatorLogic {
 
     var history as Array<Double> = [] as Array<Double>;
     var angMode as LX_ANGMODE = LX_ANGMODE_DEGREES;
+    var memory as Dictionary<Number, Double> = {} as Dictionary<Number, Double>;
 
     function saveState() {
         Storage.setValue(STORAGE_STATE_VERSION, APP_VERSION);
@@ -51,6 +52,7 @@ class LxCalculatorLogic {
         Storage.setValue(STORAGE_STATE_ERRORED, _errored);
         Storage.setValue(STORAGE_HISTORY, history);
         Storage.setValue(STORAGE_ANGMODE, angMode);
+        Storage.setValue(STORAGE_MEMORY, memory);
     }
 
     function loadState() {
@@ -63,6 +65,7 @@ class LxCalculatorLogic {
             Storage.deleteValue(STORAGE_STATE_ERRORED);
             Storage.deleteValue(STORAGE_HISTORY);
             Storage.deleteValue(STORAGE_ANGMODE);
+            Storage.deleteValue(STORAGE_MEMORY);
         }
         var left = Storage.getValue(STORAGE_STATE_LEFT);
         if (left != null) {
@@ -87,6 +90,10 @@ class LxCalculatorLogic {
         var angModeS = Storage.getValue(STORAGE_ANGMODE);
         if (angModeS != null) {
             angMode = angModeS as LX_ANGMODE;
+        }
+        var memoryS = Storage.getValue(STORAGE_MEMORY);
+        if (memoryS != null) {
+            memory = memoryS;
         }
     }
 

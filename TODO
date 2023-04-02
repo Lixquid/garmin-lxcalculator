@@ -2,7 +2,6 @@
 
 - Add tests for trig
 - Memory
-  - Defaults to cell 1
   - Setting to enable more memory cells, open selection on click
 - A compressed view with common ops (4x5 view)
     - ```

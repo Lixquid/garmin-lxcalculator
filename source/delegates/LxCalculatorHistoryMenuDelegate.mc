@@ -1,7 +1,8 @@
 import Toybox.WatchUi;
 
 class LxCalculatorHistoryMenuDelegate extends Menu2InputDelegate {
-    (:initialized) private var _logic as LxCalculatorLogic;
+    (:initialized)
+    private var _logic as LxCalculatorLogic;
 
     function initialize(logic as LxCalculatorLogic) {
         Menu2InputDelegate.initialize();
@@ -9,7 +10,9 @@ class LxCalculatorHistoryMenuDelegate extends Menu2InputDelegate {
     }
 
     function onSelect(item) {
-        if (item.getId() == "") { return; }
+        if (item.getId() == "") {
+            return;
+        }
         _logic.setValue(_logic.history[item.getId().toNumber()], {});
         onBack();
     }
@@ -20,22 +23,12 @@ class LxCalculatorHistoryMenuDelegate extends Menu2InputDelegate {
 }
 
 function createLxCalculatorHistoryMenu(logic as LxCalculatorLogic) {
-    var menu = new Menu2({:title => STR_HISTORYMENUTITLE});
+    var menu = new Menu2({ :title => STR_HISTORYMENUTITLE });
     if (logic.history.size() == 0) {
-        menu.addItem(new MenuItem(
-            STR_HISTORYMENUNOENTRIES,
-            null,
-            "",
-            {}
-        ));
+        menu.addItem(new MenuItem(STR_HISTORYMENUNOENTRIES, null, "", {}));
     } else {
         for (var i = 0; i < logic.history.size(); i++) {
-            menu.addItem(new MenuItem(
-                logic.history[i].toString(),
-                null,
-                i.toString(),
-                {}
-            ));
+            menu.addItem(new MenuItem(logic.history[i].toString(), null, i.toString(), null));
         }
         menu.setFocus(logic.history.size() - 1);
     }
