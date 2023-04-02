@@ -13,7 +13,7 @@
         </fonts>
     </text-area>
 
-    <label text="^" x="50%" y="5%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <drawable id="TransitionUpIcon" />
 
     <!-- <label text="MR" x="23.333%" y="33.125%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" /> -->
     <!-- <label text="MS" x="50%" y="33.125%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" /> -->

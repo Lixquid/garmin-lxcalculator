@@ -1,3 +1,15 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+    <drawable-list id="TransitionUpIcon">
+        <shape type="polygon" x="0%" y="0%" points="[[47%, 7%], [50%, 3%], [53%, 7%]]" color="Graphics.COLOR_WHITE" />
+    </drawable-list>
+    <drawable-list id="TransitionRightIcon">
+        <shape type="polygon" x="0%" y="0%" points="[[93%, 47%], [97%, 50%], [93%, 53%]]" color="Graphics.COLOR_WHITE" />
+    </drawable-list>
+    <drawable-list id="TransitionDownIcon">
+        <shape type="polygon" x="0%" y="0%" points="[[47%, 93%], [50%, 97%], [53%, 93%]]" color="Graphics.COLOR_WHITE" />
+    </drawable-list>
+    <drawable-list id="TransitionLeftIcon">
+        <shape type="polygon" x="0%" y="0%" points="[[7%, 47%], [3%, 50%], [7%, 53%]]" color="Graphics.COLOR_WHITE" />
+    </drawable-list>
 </drawables>
