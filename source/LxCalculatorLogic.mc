@@ -12,21 +12,27 @@ enum LX_OPERATOR {
     LX_OPERATOR_MULTIPLY,
     LX_OPERATOR_DIVIDE,
     LX_OPERATOR_POWER,
-    LX_OPERATOR_LOG
+    LX_OPERATOR_LOG,
 }
 
-var LxCalculatorOperatorDisplay = {
-    LX_OPERATOR_NONE => "$1$",
-    LX_OPERATOR_ADD => "$1$ + $2$",
-    LX_OPERATOR_SUBTRACT => "$1$ - $2$",
-    LX_OPERATOR_MULTIPLY => "$1$ × $2$",
-    LX_OPERATOR_DIVIDE => "$1$ ÷ $2$",
-    LX_OPERATOR_POWER => "$1$ ^ $2$",
-    LX_OPERATOR_LOG => "log($1$, $2$)"
-} as Dictionary<LX_OPERATOR, String>;
+enum LX_ANGMODE {
+    LX_ANGMODE_DEGREES,
+    LX_ANGMODE_RADIANS,
+    LX_ANGMODE_GRADIANS,
+}
+
+var LxCalculatorOperatorDisplay =
+    {
+        LX_OPERATOR_NONE => "$1$",
+        LX_OPERATOR_ADD => "$1$ + $2$",
+        LX_OPERATOR_SUBTRACT => "$1$ - $2$",
+        LX_OPERATOR_MULTIPLY => "$1$ × $2$",
+        LX_OPERATOR_DIVIDE => "$1$ ÷ $2$",
+        LX_OPERATOR_POWER => "$1$ ^ $2$",
+        LX_OPERATOR_LOG => "log($1$, $2$)",
+    } as Dictionary<LX_OPERATOR, String>;
 
 class LxCalculatorLogic {
-
     var _nan = Math.pow(-1, 0.5);
 
     var _left as Array<Char> = [] as Array<Char>;
@@ -35,6 +41,7 @@ class LxCalculatorLogic {
     var _errored as Boolean = false;
 
     var history as Array<Double> = [] as Array<Double>;
+    var angMode as LX_ANGMODE = LX_ANGMODE_DEGREES;
 
     function saveState() {
         Storage.setValue(STORAGE_STATE_VERSION, APP_VERSION);
@@ -43,6 +50,7 @@ class LxCalculatorLogic {
         Storage.setValue(STORAGE_STATE_RIGHT, _right);
         Storage.setValue(STORAGE_STATE_ERRORED, _errored);
         Storage.setValue(STORAGE_HISTORY, history);
+        Storage.setValue(STORAGE_ANGMODE, angMode);
     }
 
     function loadState() {
@@ -54,21 +62,38 @@ class LxCalculatorLogic {
             Storage.deleteValue(STORAGE_STATE_RIGHT);
             Storage.deleteValue(STORAGE_STATE_ERRORED);
             Storage.deleteValue(STORAGE_HISTORY);
+            Storage.deleteValue(STORAGE_ANGMODE);
         }
         var left = Storage.getValue(STORAGE_STATE_LEFT);
-        if (left != null) { _left = left; }
+        if (left != null) {
+            _left = left;
+        }
         var operator = Storage.getValue(STORAGE_STATE_OPERATOR);
-        if (operator != null) { _operator = operator as LX_OPERATOR; }
+        if (operator != null) {
+            _operator = operator as LX_OPERATOR;
+        }
         var right = Storage.getValue(STORAGE_STATE_RIGHT);
-        if (right != null) { _right = right; }
+        if (right != null) {
+            _right = right;
+        }
         var errored = Storage.getValue(STORAGE_STATE_ERRORED);
-        if (errored != null) { _errored = errored; }
+        if (errored != null) {
+            _errored = errored;
+        }
         var historyS = Storage.getValue(STORAGE_HISTORY);
-        if (historyS != null) { history = historyS; }
+        if (historyS != null) {
+            history = historyS;
+        }
+        var angModeS = Storage.getValue(STORAGE_ANGMODE);
+        if (angModeS != null) {
+            angMode = angModeS as LX_ANGMODE;
+        }
     }
 
     function addChar(char as Char) {
-        if (_errored) { return; }
+        if (_errored) {
+            return;
+        }
 
         var target = _operator == LX_OPERATOR_NONE ? _left : _right;
 
@@ -99,7 +124,9 @@ class LxCalculatorLogic {
     }
 
     function delete() {
-        if (_errored) { return; }
+        if (_errored) {
+            return;
+        }
 
         if (_right.size() > 0) {
             if (_right.size() == 2 && _right[0] == '0' && _right[1] == '.') {
@@ -128,7 +155,9 @@ class LxCalculatorLogic {
     }
 
     function setOperator(op as LX_OPERATOR) {
-        if (_errored) { return; }
+        if (_errored) {
+            return;
+        }
 
         if (_right.size() != 0) {
             // If we have an existing operation, calculate it before doing another
@@ -139,10 +168,15 @@ class LxCalculatorLogic {
         saveState();
     }
 
-    function calculate(options as {
-        :addToHistory as Boolean or Null
-    }) {
-        if (_errored) { return; }
+    function calculate(
+        options as
+            {
+                :addToHistory as Boolean?,
+            }
+    ) {
+        if (_errored) {
+            return;
+        }
 
         if (_operator == LX_OPERATOR_NONE) {
             // No operation to do
@@ -218,9 +252,13 @@ class LxCalculatorLogic {
         return out == null ? 0d : out;
     }
 
-    function setValue(value as Double, options as {
-        :addToHistory as Boolean or Null
-    }) {
+    function setValue(
+        value as Double,
+        options as
+            {
+                :addToHistory as Boolean?,
+            }
+    ) {
         if (value != value) {
             // NaN
             setErrored();
@@ -281,16 +319,25 @@ class LxCalculatorLogic {
         if (_errored) {
             return "ERR";
         }
-        return Lang.format(LxCalculatorOperatorDisplay[_operator], [
-            _left.size() == 0 ? "0" : StringUtil.charArrayToString(_left),
-            _right.size() == 0 ? "0" : StringUtil.charArrayToString(_right)
-        ] as Array<String>);
+        return Lang.format(
+            LxCalculatorOperatorDisplay[_operator],
+            [
+                _left.size() == 0 ? "0" : StringUtil.charArrayToString(_left),
+                _right.size() == 0 ? "0" : StringUtil.charArrayToString(_right),
+            ] as Array<String>
+        );
     }
 }
 
 (:test)
 module LxCalculatorLogicTests {
-    function eq_l(logger as Logger, l as LxCalculatorLogic, left as Array<Char>, op as LX_OPERATOR, right as Array<Char>) as Boolean {
+    function eq_l(
+        logger as Logger,
+        l as LxCalculatorLogic,
+        left as Array<Char>,
+        op as LX_OPERATOR,
+        right as Array<Char>
+    ) as Boolean {
         if (l._operator != op) {
             logger.error("Operators are different");
             logger.error("Expected: " + op.toString());

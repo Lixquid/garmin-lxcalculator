@@ -7,6 +7,7 @@ const STORAGE_STATE_OPERATOR = "saveState.operator";
 const STORAGE_STATE_RIGHT = "saveState.right";
 const STORAGE_STATE_ERRORED = "saveState.errored";
 const STORAGE_HISTORY = "history";
+const STORAGE_ANGMODE = "angmode";
 
 (:initialized)
 var APP_VERSION as String;
