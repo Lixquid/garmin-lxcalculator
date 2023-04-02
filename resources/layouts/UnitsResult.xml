@@ -1,0 +1,27 @@
+<layout id="UnitsResult">
+    <text-area id="From"
+        x="10%" y="25%" width="80%" height="20%"
+        color="Graphics.COLOR_WHITE"
+        justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER"
+        text=""
+    >
+        <fonts>
+            <font>Graphics.FONT_SMALL</font>
+            <font>Graphics.FONT_TINY</font>
+            <font>Graphics.FONT_XTINY</font>
+        </fonts>
+    </text-area>
+    <label text="=" x="50%" y="50%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" />
+    <text-area id="To"
+        x="10%" y="55%" width="80%" height="20%"
+        color="Graphics.COLOR_WHITE"
+        justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER"
+        text=""
+    >
+        <fonts>
+            <font>Graphics.FONT_SMALL</font>
+            <font>Graphics.FONT_TINY</font>
+            <font>Graphics.FONT_XTINY</font>
+        </fonts>
+    </text-area>
+</layout>

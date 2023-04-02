@@ -1,0 +1,169 @@
+{
+    "Distance": [
+        {
+            "name": "millimetres",
+            "unit": "mm",
+            "factor": 0.001
+        },
+        {
+            "name": "metres",
+            "unit": "m",
+            "factor": 1
+        },
+        {
+            "name": "kilometres",
+            "unit": "km",
+            "factor": 1000
+        },
+        {
+            "name": "yards",
+            "unit": "yd",
+            "factor": 0.9144
+        },
+        {
+            "name": "feet",
+            "unit": "ft",
+            "factor": 0.3048
+        },
+        {
+            "name": "inches",
+            "unit": "in",
+            "factor": 0.0254
+        },
+        {
+            "name": "miles",
+            "unit": "mi",
+            "factor": 1609.344
+        }
+    ],
+    "Area": [
+        {
+            "name": "square metres",
+            "unit": "m²",
+            "factor": 1
+        },
+        {
+            "name": "square kilometres",
+            "unit": "km²",
+            "factor": 1000000
+        },
+        {
+            "name": "hectares",
+            "unit": "ha",
+            "factor": 10000
+        },
+        {
+            "name": "acres",
+            "unit": "acre",
+            "factor": 4046.8564224
+        },
+        {
+            "name": "square miles",
+            "unit": "sq mi",
+            "factor": 2589988.110336
+        }
+    ],
+    "Volume": [
+        {
+            "name": "litres",
+            "unit": "L",
+            "factor": 1
+        },
+        {
+            "name": "fluid ounces",
+            "unit": "fl oz",
+            "factor": 28.4130625
+        },
+        {
+            "name": "pints",
+            "unit": "pt",
+            "factor": 568.26125
+        },
+        {
+            "name": "quarts",
+            "unit": "qt",
+            "factor": 1136.5225
+        },
+        {
+            "name": "gallons",
+            "unit": "gal",
+            "factor": 4546.09
+        }
+    ],
+    "Mass": [
+        {
+            "name": "milligrams",
+            "unit": "mg",
+            "factor": 0.001
+        },
+        {
+            "name": "grams",
+            "unit": "g",
+            "factor": 1
+        },
+        {
+            "name": "kilograms",
+            "unit": "kg",
+            "factor": 1
+        },
+        {
+            "name": "tonnes (Metric)",
+            "unit": "t",
+            "factor": 1000
+        },
+        {
+            "name": "ounces",
+            "unit": "oz",
+            "factor": 0.028349523125
+        },
+        {
+            "name": "pounds",
+            "unit": "lb",
+            "factor": 0.45359237
+        },
+        {
+            "name": "stone",
+            "unit": "st",
+            "factor": 6.35029318
+        },
+        {
+            "name": "tons (Imperial)",
+            "unit": "t",
+            "factor": 1016.0469088
+        }
+    ],
+    "Energy": [
+        {
+            "name": "joules",
+            "unit": "J",
+            "factor": 1
+        },
+        {
+            "name": "electronvolts",
+            "unit": "eV",
+            "factor": 1.602176634e-19
+        }
+    ],
+    "Time": [
+        {
+            "name": "seconds",
+            "unit": "s",
+            "factor": 1
+        },
+        {
+            "name": "minutes",
+            "unit": "min",
+            "factor": 60
+        },
+        {
+            "name": "hours",
+            "unit": "h",
+            "factor": 3600
+        },
+        {
+            "name": "days",
+            "unit": "d",
+            "factor": 86400
+        }
+    ]
+}

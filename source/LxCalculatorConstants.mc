@@ -8,30 +8,53 @@ const STORAGE_STATE_RIGHT = "saveState.right";
 const STORAGE_STATE_ERRORED = "saveState.errored";
 const STORAGE_HISTORY = "history";
 
-(:initialized) var APP_VERSION as String;
+(:initialized)
+var APP_VERSION as String;
 
-(:initialized) var STR_MAINMENUTITLE as String;
-(:initialized) var STR_MAINMENUSETTINGS as String;
-(:initialized) var STR_HISTORYMENUTITLE as String;
-(:initialized) var STR_HISTORYMENUNOENTRIES as String;
+(:initialized)
+var STR_MAINMENUTITLE as String;
+(:initialized)
+var STR_MAINMENUSETTINGS as String;
+(:initialized)
+var STR_MAINMENUCONVERT as String;
+(:initialized)
+var STR_HISTORYMENUTITLE as String;
+(:initialized)
+var STR_HISTORYMENUNOENTRIES as String;
+(:initialized)
+var STR_CONVERTMENUFROM as String;
+(:initialized)
+var STR_CONVERTMENUTO as String;
 
-(:initialized) var SETTING_SWITCHAFTEROPERATOR as String;
-(:initialized) var SETTING_SWITCHAFTEROPERATOR_TITLE as String;
-(:initialized) var SETTING_SWITCHAFTEROPERATOR_PROMPT as String;
-(:initialized) var SETTING_VIBRATEONBUTTON as String;
-(:initialized) var SETTING_VIBRATEONBUTTON_TITLE as String;
-(:initialized) var SETTING_VIBRATEONBUTTON_PROMPT as String;
-(:initialized) var SETTING_SCREENTRANSITIONS as String;
-(:initialized) var SETTING_SCREENTRANSITIONS_TITLE as String;
-(:initialized) var SETTING_SCREENTRANSITIONS_PROMPT as String;
+(:initialized)
+var SETTING_SWITCHAFTEROPERATOR as String;
+(:initialized)
+var SETTING_SWITCHAFTEROPERATOR_TITLE as String;
+(:initialized)
+var SETTING_SWITCHAFTEROPERATOR_PROMPT as String;
+(:initialized)
+var SETTING_VIBRATEONBUTTON as String;
+(:initialized)
+var SETTING_VIBRATEONBUTTON_TITLE as String;
+(:initialized)
+var SETTING_VIBRATEONBUTTON_PROMPT as String;
+(:initialized)
+var SETTING_SCREENTRANSITIONS as String;
+(:initialized)
+var SETTING_SCREENTRANSITIONS_TITLE as String;
+(:initialized)
+var SETTING_SCREENTRANSITIONS_PROMPT as String;
 
 function initializeConstants() {
     APP_VERSION = WatchUi.loadResource(Rez.Strings.AppVersion);
 
     STR_MAINMENUTITLE = WatchUi.loadResource(Rez.Strings.MainMenuTitle);
     STR_MAINMENUSETTINGS = WatchUi.loadResource(Rez.Strings.MainMenuSettings);
+    STR_MAINMENUCONVERT = WatchUi.loadResource(Rez.Strings.MainMenuConvert);
     STR_HISTORYMENUTITLE = WatchUi.loadResource(Rez.Strings.HistoryMenuTitle);
     STR_HISTORYMENUNOENTRIES = WatchUi.loadResource(Rez.Strings.HistoryMenuNoEntries);
+    STR_CONVERTMENUFROM = WatchUi.loadResource(Rez.Strings.ConvertMenuFrom);
+    STR_CONVERTMENUTO = WatchUi.loadResource(Rez.Strings.ConvertMenuTo);
 
     SETTING_SWITCHAFTEROPERATOR = WatchUi.loadResource(Rez.Strings.SwitchAfterOperator);
     SETTING_SWITCHAFTEROPERATOR_TITLE = WatchUi.loadResource(Rez.Strings.SwitchAfterOperatorTitle);

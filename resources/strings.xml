@@ -4,9 +4,15 @@
 
     <string id="MainMenuTitle">Main Menu</string>
     <string id="MainMenuSettings">Settings</string>
+    <string id="MainMenuConvert">Convert Units</string>
 
     <string id="HistoryMenuTitle">History</string>
     <string id="HistoryMenuNoEntries">No History Entries</string>
+
+    <string id="ConvertMenuFrom">Convert From</string>
+    <string id="ConvertMenuTo">Convert To</string>
+    <string id="ConvertMenuResultDiscard">Discard</string>
+    <string id="ConvertMenuResultSet">Send to Calculator</string>
 
     <string id="SwitchAfterOperator">SwitchAfterOperator</string>
     <string id="SwitchAfterOperatorTitle">Switch after setting Operator</string>
