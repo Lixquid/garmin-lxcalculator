@@ -6,6 +6,11 @@
             "factor": 0.001
         },
         {
+            "name": "centimetres",
+            "unit": "cm",
+            "factor": 0.01
+        },
+        {
             "name": "metres",
             "unit": "m",
             "factor": 1
@@ -16,9 +21,9 @@
             "factor": 1000
         },
         {
-            "name": "yards",
-            "unit": "yd",
-            "factor": 0.9144
+            "name": "inches",
+            "unit": "in",
+            "factor": 0.0254
         },
         {
             "name": "feet",
@@ -26,9 +31,9 @@
             "factor": 0.3048
         },
         {
-            "name": "inches",
-            "unit": "in",
-            "factor": 0.0254
+            "name": "yards",
+            "unit": "yd",
+            "factor": 0.9144
         },
         {
             "name": "miles",
@@ -67,7 +72,7 @@
         {
             "name": "litres",
             "unit": "L",
-            "factor": 1
+            "factor": 1000
         },
         {
             "name": "fluid ounces",
