@@ -36,6 +36,13 @@ class LxCalculatorAbstractView extends View {
     }
 
     function onButton(x as Number, y as Number) {}
+    function onButtonHeld(x as Number, y as Number) {
+        if (x == 2 && y == 3) {
+            _logic.setValue(0d, {});
+            vibrateIfEnabled();
+            requestUpdate();
+        }
+    }
     function onPage(direction as LX_DIRECTION) {}
     function onConfirm() {
         _logic.calculate({ :addToHistory => true });

@@ -16,7 +16,6 @@
 - Invert number `+/-`
 - Actual full parsing with precedence
 - RPN mode (replace history with stack)
-- Hold DEL to delete all
 
 ```
                          History

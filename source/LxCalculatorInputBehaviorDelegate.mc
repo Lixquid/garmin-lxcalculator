@@ -70,6 +70,22 @@ class LxCalculatorInputBehaviorDelegate extends BehaviorDelegate {
         return true;
     }
 
+    function onHold(clickEvent as ClickEvent) as Boolean {
+        if (clickEvent.getType() != CLICK_TYPE_HOLD) {
+            return false;
+        }
+
+        var coords = clickEvent.getCoordinates();
+        var x = coords[0].toDouble() / _view.width;
+        var y = coords[1].toDouble() / _view.height;
+        if (x < 0.1 || x > 0.9 || y < 0.25 || y > 0.9) {
+            return true;
+        }
+
+        _view.onButtonHeld(((x - 0.1) / 0.2666).toNumber(), ((y - 0.25) / 0.1625).toNumber());
+        return true;
+    }
+
     function onKey(keyEvent as KeyEvent) as Boolean {
         switch (keyEvent.getKey()) {
             case KEY_DOWN:
