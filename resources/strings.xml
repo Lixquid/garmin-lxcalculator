@@ -1,6 +1,6 @@
 <strings>
     <string id="AppName">Calculator</string>
-    <string id="AppVersion">0.1.0</string>
+    <string id="AppVersion">0.2.0</string>
 
     <string id="MainMenuTitle">Main Menu</string>
     <string id="MainMenuSettings">Settings</string>

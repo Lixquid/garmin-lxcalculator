@@ -10,6 +10,13 @@ A touch calculator app for Garmin devices.
 - Physical button based shortcuts
 - Automatically saving history for recall
 - Trigonometry functions: sin, cos, tan, asin, acos, atan, pi, e, ln, log
+  - With support for degrees, radians, and gradians
+- Memory that can be set, recalled, and added to
+- Unit conversions between physical units; convert metres to yards, litres to
+  pints, celsius to fahrenheit, and more!
+- Useful shortcuts for quick actions:
+  - Press START or tap the answer box to quickly get the answer
+  - Long hold on `DEL` to delete the current input
 
 ## How to Use
 
@@ -22,6 +29,8 @@ The central view contains the number pad. To switch to another page:
 Pages have small arrows around the edge to indicate other pages.
 
 ![Page Layout](misc/images/page_layout.png)
+
+To get to the **Main Menu**, hold the UP button.
 
 ## Button mapping
 
@@ -40,14 +49,19 @@ long-pressing the MENU button and going to the "Settings" menu.
       been chosen.
 - Vibration
     - If set, button presses will cause a small vibration.
+- Screen Transitions
+    - If set, moving pages will show an animation. Disable to speed up moving
+      around the app.
 
-# Developer Documentation
+<details>
+<summary>Developer Documentation</summary>
 
 ## Preparing a release
 
 To perform a release:
 
 - Create an entry in [CHANGELOG.md](CHANGELOG.md) under the next version
+- Update README.md with features / screenshots
 - Update the version number for `AppVersion` in
   [resources/strings.xml](resources/strings.xml).
 - Commit with `Version x.x.x`
@@ -65,3 +79,12 @@ To perform a release:
     - Feather edges set to `2.0`
     - Threshold set to `50`
   4. Remove the white exterior
+</details>
+
+## Screenshots
+
+![Number Pad](misc/screenshots/1.png)
+![Operators](misc/screenshots/2.png)
+![Trigonometry](misc/screenshots/3.png)
+![History](misc/screenshots/4.png)
+![Unit Conversions](misc/screenshots/5.png)
