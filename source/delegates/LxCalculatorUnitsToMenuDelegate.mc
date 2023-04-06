@@ -37,7 +37,11 @@ class LxCalculatorUnitsToMenuDelegate extends Menu2InputDelegate {
         }
 
         var value = _logic.getAsDouble();
-        var result = (value * fromData["factor"]) / toData["factor"];
+        var fromAffine = fromData["affine"];
+        if (fromAffine == null) { fromAffine = 0d; }
+        var toAffine = toData["affine"];
+        if (toAffine == null) { toAffine = 0d; }
+        var result = ((value - fromAffine) * fromData["factor"]) / toData["factor"] + toAffine;
         WatchUi.pushView(
             new LxCalculatorUnitsResultView(
                 doubleToStr(value) + fromData["unit"],

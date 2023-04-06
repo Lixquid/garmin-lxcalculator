@@ -17,7 +17,6 @@
 - Actual full parsing with precedence
 - RPN mode (replace history with stack)
 - Graphing Display
-- Affine transforms for units (temperature)
 
 ```
                          History

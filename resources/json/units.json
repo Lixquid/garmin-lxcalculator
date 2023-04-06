@@ -170,5 +170,29 @@
             "unit": "d",
             "factor": 86400
         }
+    ],
+    "Temperature": [
+        {
+            "name": "kelvin",
+            "unit": "K",
+            "factor": 1
+        },
+        {
+            "name": "celsius",
+            "unit": "°C",
+            "factor": 1,
+            "affine": -273.15
+        },
+        {
+            "name": "fahrenheit",
+            "unit": "°F",
+            "factor": 0.5555555556,
+            "affine": -459.67
+        },
+        {
+            "name": "rankine",
+            "unit": "°R",
+            "factor": 0.5555555556
+        }
     ]
 }
