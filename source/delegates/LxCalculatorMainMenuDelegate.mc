@@ -20,24 +20,15 @@ class LxCalculatorMainMenuDelegate extends Menu2InputDelegate {
 }
 
 function createLxCalculatorMainMenu() {
-    var menu = new Menu2({:title => STR_MAINMENUTITLE});
-    menu.addItem(new MenuItem(
-        STR_MAINMENUCONVERT,
-        null,
-        "convert",
-        {}
-    ));
-    menu.addItem(new MenuItem(
-        STR_MAINMENUSETTINGS,
-        null,
-        "settings",
-        {}
-    ));
-    menu.addItem(new MenuItem(
-        "Lx Calculator",
-        APP_VERSION,
-        "",
-        {}
-    ));
-    WatchUi.pushView(menu, new LxCalculatorMainMenuDelegate(), slideIfEnabled(WatchUi.SLIDE_RIGHT));
+    var menu = new Menu2({ :title => STR_MAINMENUTITLE });
+
+    menu.addItem(new MenuItem(STR_MAINMENUCONVERT, null, "convert", {}));
+    menu.addItem(new MenuItem(STR_MAINMENUSETTINGS, null, "settings", {}));
+    menu.addItem(new MenuItem("Lx Calculator", APP_VERSION, "", {}));
+
+    WatchUi.pushView(
+        menu,
+        new LxCalculatorMainMenuDelegate(),
+        slideIfEnabled(WatchUi.SLIDE_RIGHT)
+    );
 }

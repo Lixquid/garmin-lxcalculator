@@ -110,7 +110,10 @@ class LxCalculatorLogic {
                     // Can't add multiple .
                     return;
                 }
-                if (target.size() == 0 || (target.size() == 1 && target[0] == '-')) {
+                if (
+                    target.size() == 0 ||
+                    (target.size() == 1 && target[0] == '-')
+                ) {
                     // Turn "." into "0."
                     target.add('0');
                 }
@@ -314,7 +317,10 @@ class LxCalculatorLogic {
 
     function doubleToOperand(value as Double) {
         var arr = doubleToCharArray(value);
-        if ((arr.size() == 1 && arr[0] == '0') || (arr.size() == 2 && arr[0] == '-' && arr[1] == '0')) {
+        if (
+            (arr.size() == 1 && arr[0] == '0') ||
+            (arr.size() == 2 && arr[0] == '-' && arr[1] == '0')
+        ) {
             return [];
         }
         return arr;

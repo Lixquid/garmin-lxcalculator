@@ -5,13 +5,14 @@ import Toybox.WatchUi;
 typedef LxCalculatorUnitData as {
     "name" as String,
     "unit" as String,
-    "factor" as Double
+    "factor" as Double,
 };
 
-var lxCalculatorUnitsJson as Dictionary<String, Array<LxCalculatorUnitData>>?;
+var lxCalculatorUnitsJson as Dictionary<String, Array<LxCalculatorUnitData> >?;
 
 class LxCalculatorUnitsCategoryMenuDelegate extends Menu2InputDelegate {
-    (:initialized) private var _logic as LxCalculatorLogic;
+    (:initialized)
+    private var _logic as LxCalculatorLogic;
 
     function initialize(logic as LxCalculatorLogic) {
         Menu2InputDelegate.initialize();
@@ -29,7 +30,9 @@ class LxCalculatorUnitsCategoryMenuDelegate extends Menu2InputDelegate {
 
 function createLxCalculatorUnitsCategoryMenu() {
     if (lxCalculatorUnitsJson == null) {
-        lxCalculatorUnitsJson = Application.loadResource(Rez.JsonData.UnitsData);
+        lxCalculatorUnitsJson = Application.loadResource(
+            Rez.JsonData.UnitsData
+        );
     }
 
     // TODO: Account for errored logic
@@ -40,5 +43,9 @@ function createLxCalculatorUnitsCategoryMenu() {
     for (var i = 0; i < keys.size(); i++) {
         menu.addItem(new MenuItem(keys[i], null, keys[i], {}));
     }
-    WatchUi.pushView(menu, new LxCalculatorUnitsCategoryMenuDelegate(logic), slideIfEnabled(WatchUi.SLIDE_LEFT));
+    WatchUi.pushView(
+        menu,
+        new LxCalculatorUnitsCategoryMenuDelegate(logic),
+        slideIfEnabled(WatchUi.SLIDE_LEFT)
+    );
 }

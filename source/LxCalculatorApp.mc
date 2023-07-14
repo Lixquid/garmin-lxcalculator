@@ -3,7 +3,6 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 
 class LxCalculatorApp extends AppBase {
-
     var logic as LxCalculatorLogic = new LxCalculatorLogic();
 
     function initialize() {
@@ -16,5 +15,4 @@ class LxCalculatorApp extends AppBase {
         var view = new LxCalculatorNumbersView(logic);
         return [view, new LxCalculatorInputBehaviorDelegate(view)];
     }
-
 }

@@ -3,9 +3,7 @@ import Toybox.Graphics;
 import Toybox.WatchUi;
 import Toybox.Lang;
 
-var lxVibeProfile = [
-    new Attention.VibeProfile(25, 50)
-];
+var lxVibeProfile = [new Attention.VibeProfile(25, 50)];
 
 class LxCalculatorAbstractView extends View {
     protected var _display as TextArea?;
@@ -29,9 +27,7 @@ class LxCalculatorAbstractView extends View {
     }
 
     function onUpdate(dc as Dc) {
-        _display.setText(
-            _logic.format()
-        );
+        _display.setText(_logic.format());
         View.onUpdate(dc);
     }
 

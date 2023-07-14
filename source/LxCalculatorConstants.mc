@@ -54,17 +54,35 @@ function initializeConstants() {
     STR_MAINMENUSETTINGS = WatchUi.loadResource(Rez.Strings.MainMenuSettings);
     STR_MAINMENUCONVERT = WatchUi.loadResource(Rez.Strings.MainMenuConvert);
     STR_HISTORYMENUTITLE = WatchUi.loadResource(Rez.Strings.HistoryMenuTitle);
-    STR_HISTORYMENUNOENTRIES = WatchUi.loadResource(Rez.Strings.HistoryMenuNoEntries);
+    STR_HISTORYMENUNOENTRIES = WatchUi.loadResource(
+        Rez.Strings.HistoryMenuNoEntries
+    );
     STR_CONVERTMENUFROM = WatchUi.loadResource(Rez.Strings.ConvertMenuFrom);
     STR_CONVERTMENUTO = WatchUi.loadResource(Rez.Strings.ConvertMenuTo);
 
-    SETTING_SWITCHAFTEROPERATOR = WatchUi.loadResource(Rez.Strings.SwitchAfterOperator);
-    SETTING_SWITCHAFTEROPERATOR_TITLE = WatchUi.loadResource(Rez.Strings.SwitchAfterOperatorTitle);
-    SETTING_SWITCHAFTEROPERATOR_PROMPT = WatchUi.loadResource(Rez.Strings.SwitchAfterOperatorPrompt);
+    SETTING_SWITCHAFTEROPERATOR = WatchUi.loadResource(
+        Rez.Strings.SwitchAfterOperator
+    );
+    SETTING_SWITCHAFTEROPERATOR_TITLE = WatchUi.loadResource(
+        Rez.Strings.SwitchAfterOperatorTitle
+    );
+    SETTING_SWITCHAFTEROPERATOR_PROMPT = WatchUi.loadResource(
+        Rez.Strings.SwitchAfterOperatorPrompt
+    );
     SETTING_VIBRATEONBUTTON = WatchUi.loadResource(Rez.Strings.VibrateOnButton);
-    SETTING_VIBRATEONBUTTON_TITLE = WatchUi.loadResource(Rez.Strings.VibrateOnButtonTitle);
-    SETTING_VIBRATEONBUTTON_PROMPT = WatchUi.loadResource(Rez.Strings.VibrateOnButtonPrompt);
-    SETTING_SCREENTRANSITIONS = WatchUi.loadResource(Rez.Strings.ScreenTransitions);
-    SETTING_SCREENTRANSITIONS_TITLE = WatchUi.loadResource(Rez.Strings.ScreenTransitionsTitle);
-    SETTING_SCREENTRANSITIONS_PROMPT = WatchUi.loadResource(Rez.Strings.ScreenTransitionsPrompt);
+    SETTING_VIBRATEONBUTTON_TITLE = WatchUi.loadResource(
+        Rez.Strings.VibrateOnButtonTitle
+    );
+    SETTING_VIBRATEONBUTTON_PROMPT = WatchUi.loadResource(
+        Rez.Strings.VibrateOnButtonPrompt
+    );
+    SETTING_SCREENTRANSITIONS = WatchUi.loadResource(
+        Rez.Strings.ScreenTransitions
+    );
+    SETTING_SCREENTRANSITIONS_TITLE = WatchUi.loadResource(
+        Rez.Strings.ScreenTransitionsTitle
+    );
+    SETTING_SCREENTRANSITIONS_PROMPT = WatchUi.loadResource(
+        Rez.Strings.ScreenTransitionsPrompt
+    );
 }

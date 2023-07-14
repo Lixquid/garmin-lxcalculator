@@ -79,7 +79,11 @@ class LxCalculatorTrigonometryView extends LxCalculatorAbstractView {
         switch (direction) {
             case LX_DIRECTION_RIGHT: {
                 var view = new LxCalculatorNumbersView(_logic);
-                WatchUi.switchToView(view, new LxCalculatorInputBehaviorDelegate(view), slideIfEnabled(SLIDE_LEFT));
+                WatchUi.switchToView(
+                    view,
+                    new LxCalculatorInputBehaviorDelegate(view),
+                    slideIfEnabled(SLIDE_LEFT)
+                );
                 return;
             }
         }

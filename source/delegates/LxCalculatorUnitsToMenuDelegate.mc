@@ -10,7 +10,11 @@ class LxCalculatorUnitsToMenuDelegate extends Menu2InputDelegate {
     (:initialized)
     private var _from as String;
 
-    function initialize(logic as LxCalculatorLogic, category as String, from as String) {
+    function initialize(
+        logic as LxCalculatorLogic,
+        category as String,
+        from as String
+    ) {
         Menu2InputDelegate.initialize();
         _logic = logic;
         _category = category;
@@ -38,10 +42,16 @@ class LxCalculatorUnitsToMenuDelegate extends Menu2InputDelegate {
 
         var value = _logic.getAsDouble();
         var fromAffine = fromData["affine"];
-        if (fromAffine == null) { fromAffine = 0d; }
+        if (fromAffine == null) {
+            fromAffine = 0d;
+        }
         var toAffine = toData["affine"];
-        if (toAffine == null) { toAffine = 0d; }
-        var result = ((value - fromAffine) * fromData["factor"]) / toData["factor"] + toAffine;
+        if (toAffine == null) {
+            toAffine = 0d;
+        }
+        var result =
+            ((value - fromAffine) * fromData["factor"]) / toData["factor"] +
+            toAffine;
         WatchUi.pushView(
             new LxCalculatorUnitsResultView(
                 doubleToStr(value) + fromData["unit"],
@@ -57,14 +67,25 @@ class LxCalculatorUnitsToMenuDelegate extends Menu2InputDelegate {
     }
 }
 
-function createLxCalculatorToMenuDelegate(logic as LxCalculatorLogic, category as String, from as String) {
+function createLxCalculatorToMenuDelegate(
+    logic as LxCalculatorLogic,
+    category as String,
+    from as String
+) {
     var menu = new Menu2({ :title => STR_CONVERTMENUTO });
     var entries = lxCalculatorUnitsJson[category];
     for (var i = 0; i < entries.size(); i++) {
         if (entries[i]["name"].equals(from)) {
             continue;
         }
-        menu.addItem(new MenuItem(entries[i]["name"], entries[i]["unit"], entries[i]["name"], {}));
+        menu.addItem(
+            new MenuItem(
+                entries[i]["name"],
+                entries[i]["unit"],
+                entries[i]["name"],
+                {}
+            )
+        );
     }
     WatchUi.pushView(
         menu,

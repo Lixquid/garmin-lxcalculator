@@ -31,9 +31,20 @@ function createLxCalculatorHistoryMenu(logic as LxCalculatorLogic) {
         menu.addItem(new MenuItem(STR_HISTORYMENUNOENTRIES, null, "", {}));
     } else {
         for (var i = 0; i < logic.history.size(); i++) {
-            menu.addItem(new MenuItem(doubleToStr(logic.history[i]), null, i.toString(), null));
+            menu.addItem(
+                new MenuItem(
+                    doubleToStr(logic.history[i]),
+                    null,
+                    i.toString(),
+                    null
+                )
+            );
         }
         menu.setFocus(logic.history.size() - 1);
     }
-    WatchUi.pushView(menu, new LxCalculatorHistoryMenuDelegate(logic), slideIfEnabled(WatchUi.SLIDE_DOWN));
+    WatchUi.pushView(
+        menu,
+        new LxCalculatorHistoryMenuDelegate(logic),
+        slideIfEnabled(WatchUi.SLIDE_DOWN)
+    );
 }

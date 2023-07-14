@@ -33,9 +33,30 @@ class LxCalculatorUnitsResultMenuDelegate extends Menu2InputDelegate {
     }
 }
 
-function createLxCalculatorUnitResultMenu(logic as LxCalculatorLogic, result as Double) {
+function createLxCalculatorUnitResultMenu(
+    logic as LxCalculatorLogic,
+    result as Double
+) {
     var menu = new Menu2({ :title => doubleToStr(result) });
-    menu.addItem(new MenuItem(WatchUi.loadResource(Rez.Strings.ConvertMenuResultDiscard), null, "discard", null));
-    menu.addItem(new MenuItem(WatchUi.loadResource(Rez.Strings.ConvertMenuResultSet), null, "set", null));
-    WatchUi.pushView(menu, new LxCalculatorUnitsResultMenuDelegate(logic, result), slideIfEnabled(WatchUi.SLIDE_LEFT));
+    menu.addItem(
+        new MenuItem(
+            WatchUi.loadResource(Rez.Strings.ConvertMenuResultDiscard),
+            null,
+            "discard",
+            null
+        )
+    );
+    menu.addItem(
+        new MenuItem(
+            WatchUi.loadResource(Rez.Strings.ConvertMenuResultSet),
+            null,
+            "set",
+            null
+        )
+    );
+    WatchUi.pushView(
+        menu,
+        new LxCalculatorUnitsResultMenuDelegate(logic, result),
+        slideIfEnabled(WatchUi.SLIDE_LEFT)
+    );
 }

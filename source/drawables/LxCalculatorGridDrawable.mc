@@ -6,7 +6,7 @@ class LxCalculatorGridDrawable extends Drawable {
 
     function initialize() {
         Drawable.initialize({
-            :identifier => "Grid"
+            :identifier => "Grid",
         });
     }
 
@@ -14,15 +14,15 @@ class LxCalculatorGridDrawable extends Drawable {
         var w = dc.getWidth();
         var h = dc.getHeight();
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(w*.1, h*.1, w*.9, h*.1);
-        dc.drawLine(w*.9, h*.1, w*.9, h*.9);
-        dc.drawLine(w*.1, h*.9, w*.9, h*.9);
-        dc.drawLine(w*.1, h*.1, w*.1, h*.9);
-        dc.drawLine(w*.1, h*.25, w*.9, h*.25);
-        dc.drawLine(w*.3666, h*.25, w*.3666, h*.9);
-        dc.drawLine(w*.6332, h*.25, w*.6332, h*.9);
-        dc.drawLine(w*.1, h*.4125, w*.9, h*.4125);
-        dc.drawLine(w*.1, h*.575, w*.9, h*.575);
-        dc.drawLine(w*.1, h*.7375, w*.9, h*.7375);
+        dc.drawLine(w * 0.1, h * 0.1, w * 0.9, h * 0.1);
+        dc.drawLine(w * 0.9, h * 0.1, w * 0.9, h * 0.9);
+        dc.drawLine(w * 0.1, h * 0.9, w * 0.9, h * 0.9);
+        dc.drawLine(w * 0.1, h * 0.1, w * 0.1, h * 0.9);
+        dc.drawLine(w * 0.1, h * 0.25, w * 0.9, h * 0.25);
+        dc.drawLine(w * 0.3666, h * 0.25, w * 0.3666, h * 0.9);
+        dc.drawLine(w * 0.6332, h * 0.25, w * 0.6332, h * 0.9);
+        dc.drawLine(w * 0.1, h * 0.4125, w * 0.9, h * 0.4125);
+        dc.drawLine(w * 0.1, h * 0.575, w * 0.9, h * 0.575);
+        dc.drawLine(w * 0.1, h * 0.7375, w * 0.9, h * 0.7375);
     }
 }

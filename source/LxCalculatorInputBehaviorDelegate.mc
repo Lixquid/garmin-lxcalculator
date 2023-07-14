@@ -66,7 +66,10 @@ class LxCalculatorInputBehaviorDelegate extends BehaviorDelegate {
         // 3x4 grid, 0.1 spacing, display is 0.15 tall
         // button width = (1 - 0.1 * 2) / 3 = 0.2666
         // button height = (1 - 0.1 * 2 - 0.15) / 4 = 0.1625
-        _view.onButton(((x - 0.1) / 0.2666).toNumber(), ((y - 0.25) / 0.1625).toNumber());
+        _view.onButton(
+            ((x - 0.1) / 0.2666).toNumber(),
+            ((y - 0.25) / 0.1625).toNumber()
+        );
         return true;
     }
 
@@ -82,7 +85,10 @@ class LxCalculatorInputBehaviorDelegate extends BehaviorDelegate {
             return true;
         }
 
-        _view.onButtonHeld(((x - 0.1) / 0.2666).toNumber(), ((y - 0.25) / 0.1625).toNumber());
+        _view.onButtonHeld(
+            ((x - 0.1) / 0.2666).toNumber(),
+            ((y - 0.25) / 0.1625).toNumber()
+        );
         return true;
     }
 
@@ -105,5 +111,4 @@ class LxCalculatorInputBehaviorDelegate extends BehaviorDelegate {
         createLxCalculatorMainMenu();
         return true;
     }
-
 }
