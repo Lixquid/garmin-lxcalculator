@@ -1,3 +1,7 @@
+# Version 0.2.1
+
+- Fix bug with trigonometry functions
+
 # Version 0.2.0
 
 - Reorganised pages
