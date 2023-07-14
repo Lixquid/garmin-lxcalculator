@@ -19,7 +19,7 @@ class LxCalculatorUnitsCategoryMenuDelegate extends Menu2InputDelegate {
     }
 
     function onSelect(item as MenuItem) {
-        createLxCalculatorFromMenuDelegate(_logic, item.getId());
+        createLxCalculatorFromMenuDelegate(_logic, item.getId() as String);
     }
 
     function onBack() {

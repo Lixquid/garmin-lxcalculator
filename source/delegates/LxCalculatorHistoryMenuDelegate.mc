@@ -13,7 +13,10 @@ class LxCalculatorHistoryMenuDelegate extends Menu2InputDelegate {
         if (item.getId() == "") {
             return;
         }
-        _logic.setValue(_logic.history[item.getId().toNumber()], {});
+        _logic.setValue(
+            _logic.history[(item.getId() as Toybox.Lang.String).toNumber()],
+            {}
+        );
         onBack();
     }
 
