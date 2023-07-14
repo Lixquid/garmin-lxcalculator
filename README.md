@@ -45,18 +45,18 @@ Settings can be adjusted from the Connect IQ app on your phone, or by
 long-pressing the MENU button and going to the "Settings" menu.
 
 - Switch after setting Operator
-    - If set, the view will reset to the main number pad once an operator has
-      been chosen.
+  - If set, the view will reset to the main number pad once an operator has been
+    chosen.
 - Vibration
-    - If set, button presses will cause a small vibration.
+  - If set, button presses will cause a small vibration.
 - Screen Transitions
-    - If set, moving pages will show an animation. Disable to speed up moving
-      around the app.
+  - If set, moving pages will show an animation. Disable to speed up moving
+    around the app.
 
 <details>
-<summary>Developer Documentation</summary>
+<summary><h2>Developer Documentation</h2></summary>
 
-## Preparing a release
+### Preparing a release
 
 To perform a release:
 
@@ -67,7 +67,7 @@ To perform a release:
 - Commit with `Version x.x.x`
 - Tag that commit as `vx.x.x`
 
-## Creating screenshots
+### Creating screenshots
 
 - Use the latest Fenix X watch in the simulator
 - Screenshot with an external program (to capture the border as well)
@@ -75,16 +75,15 @@ To perform a release:
   1. Create a selection around the 280x280 pixels of the screen
   2. Grow the selection by 70 pixels
   3. Using the Fuzzy Select Tool
-    - Antialiasing enabled
-    - Feather edges set to `2.0`
-    - Threshold set to `50`
+  - Antialiasing enabled
+  - Feather edges set to `2.0`
+  - Threshold set to `50`
   4. Remove the white exterior
+
 </details>
 
 ## Screenshots
 
-![Number Pad](misc/screenshots/1.png)
-![Operators](misc/screenshots/2.png)
-![Trigonometry](misc/screenshots/3.png)
-![History](misc/screenshots/4.png)
+![Number Pad](misc/screenshots/1.png) ![Operators](misc/screenshots/2.png)
+![Trigonometry](misc/screenshots/3.png) ![History](misc/screenshots/4.png)
 ![Unit Conversions](misc/screenshots/5.png)
