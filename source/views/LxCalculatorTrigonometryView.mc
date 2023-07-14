@@ -48,14 +48,22 @@ class LxCalculatorTrigonometryView extends LxCalculatorAbstractView {
                 case 2: return;
             } break;
             case 1: switch (x) {
-                case 0: sR(Math.sin(gR())); sw(); break;
-                case 1: sR(Math.cos(gR())); sw(); break;
-                case 2: sR(Math.tan(gR())); sw(); break;
+                case 0:
+                    _logic.setValue(Math.sin(gR()), {:addToHistory => true});
+                    sw();
+                    break;
+                case 1:
+                    _logic.setValue(Math.cos(gR()), {:addToHistory => true});
+                    sw();
+                    break;
+                case 2:
+                    _logic.setValue(Math.tan(gR()), {:addToHistory => true});
+                    sw(); break;
             } break;
             case 2: switch (x) {
-                case 0: sR(Math.asin(gR())); sw(); break;
-                case 1: sR(Math.acos(gR())); sw(); break;
-                case 2: sR(Math.atan(gR())); sw(); break;
+                case 0: sR(Math.asin(_logic.getAsDouble())); sw(); break;
+                case 1: sR(Math.acos(_logic.getAsDouble())); sw(); break;
+                case 2: sR(Math.atan(_logic.getAsDouble())); sw(); break;
             } break;
             case 3: switch (x) {
                 case 0: _logic.setValue(_e, {}); sw(); break;
